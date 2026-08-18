@@ -227,3 +227,37 @@ if(fine&&!reduced){
     el.prepend(icon);
   });
 })();
+
+
+/* FINAL V4 — fit Daily Action flow to the actual available box width */
+(()=>{
+  const fitDailyAction=()=>{
+    document.querySelectorAll('.action-mantra').forEach(box=>{
+      const flow=box.querySelector('.mantra-flow');
+      if(!flow) return;
+
+      flow.style.transform='scale(1)';
+      const cs=getComputedStyle(box);
+      const available=box.clientWidth
+        - parseFloat(cs.paddingLeft||0)
+        - parseFloat(cs.paddingRight||0);
+      const natural=flow.scrollWidth;
+
+      if(!available || !natural) return;
+      const scale=Math.min(1, available/natural);
+      flow.style.transform=`scale(${scale})`;
+    });
+  };
+
+  const run=()=>requestAnimationFrame(()=>requestAnimationFrame(fitDailyAction));
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',run,{once:true});
+  }else{
+    run();
+  }
+  window.addEventListener('resize',run,{passive:true});
+  if('ResizeObserver' in window){
+    const ro=new ResizeObserver(run);
+    document.querySelectorAll('.action-mantra').forEach(el=>ro.observe(el));
+  }
+})();
