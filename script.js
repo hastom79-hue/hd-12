@@ -227,3 +227,32 @@ if(fine&&!reduced){
     el.prepend(icon);
   });
 })();
+
+
+/* RELEASE FINAL — size Daily Action by real layout width, never by transform */
+(()=>{
+  const fit=()=>{
+    document.querySelectorAll('.action-mantra').forEach(box=>{
+      const flow=box.querySelector('.mantra-flow');
+      if(!flow) return;
+      const mobile=window.innerWidth<=760;
+      let phase=mobile?18:32, arrow=mobile?14:25, gap=mobile?7:16;
+      flow.style.setProperty('--phase-size',phase+'px');
+      flow.style.setProperty('--arrow-size',arrow+'px');
+      flow.style.setProperty('--flow-gap',gap+'px');
+      const available=flow.clientWidth;
+      let natural=flow.scrollWidth;
+      if(natural>available && available>0){
+        const ratio=Math.max(.56,Math.min(1,available/natural));
+        phase*=ratio; arrow*=ratio; gap*=ratio;
+        flow.style.setProperty('--phase-size',phase.toFixed(2)+'px');
+        flow.style.setProperty('--arrow-size',arrow.toFixed(2)+'px');
+        flow.style.setProperty('--flow-gap',gap.toFixed(2)+'px');
+      }
+    });
+  };
+  const run=()=>requestAnimationFrame(()=>requestAnimationFrame(fit));
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true}); else run();
+  addEventListener('resize',run,{passive:true});
+  if(document.fonts?.ready) document.fonts.ready.then(run);
+})();

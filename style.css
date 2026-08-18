@@ -342,96 +342,288 @@ footer{min-height:88px;padding:22px clamp(30px,6vw,100px);display:flex;align-ite
 .module-svg-icon svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
 
 
-/* FINAL HDPS DAILY ACTION — one-line, contained, strong arrows */
+/* =========================================================
+   FINAL V4 — HDPS DAILY ACTION
+   Auto-fit entire flow inside the rounded box.
+   No clipping, no overlap, always one line.
+   ========================================================= */
 .action-mantra{
-  overflow:hidden;
-  padding-left:clamp(28px,4vw,64px)!important;
-  padding-right:clamp(28px,4vw,64px)!important;
+  box-sizing:border-box;
+  overflow:hidden!important;
+  padding-left:clamp(26px,3.2vw,52px)!important;
+  padding-right:clamp(26px,3.2vw,52px)!important;
 }
 .mantra-flow{
-  width:100%;
-  max-width:100%;
   display:flex!important;
-  align-items:center;
-  justify-content:center;
+  align-items:center!important;
+  justify-content:center!important;
   flex-wrap:nowrap!important;
+  width:max-content!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
   white-space:nowrap!important;
-  gap:clamp(6px,1vw,16px)!important;
+  gap:clamp(12px,1.25vw,22px)!important;
+  transform-origin:center center!important;
+  will-change:transform;
 }
-.mantra-phase{
-  flex:0 1 auto;
-  min-width:0;
+.mantra-flow .mantra-phase{
+  flex:0 0 auto!important;
   white-space:nowrap!important;
-  font-size:clamp(18px,2.35vw,34px)!important;
+  font-size:clamp(22px,2.65vw,38px)!important;
+  line-height:1!important;
+  letter-spacing:-.035em!important;
 }
 .mantra-flow i{
-  flex:0 0 auto;
+  position:static!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
   color:#61f2ad!important;
   opacity:1!important;
-  font-size:clamp(22px,2.1vw,31px)!important;
-  font-weight:1000!important;
+  font-style:normal!important;
+  font-size:clamp(23px,2.35vw,34px)!important;
   line-height:1!important;
-  text-shadow:0 0 10px rgba(97,242,173,.48);
-  transform:scaleX(1.28);
+  font-weight:1000!important;
+  text-shadow:0 0 9px rgba(97,242,173,.5);
 }
 .mantra-final{
   color:#61f2ad!important;
-  white-space:nowrap!important;
 }
-@media(max-width:760px){
-  .action-mantra{padding-left:14px!important;padding-right:14px!important}
-  .mantra-flow{gap:4px!important}
-  .mantra-phase{font-size:clamp(11px,3.25vw,19px)!important;letter-spacing:-.045em!important}
-  .mantra-flow i{font-size:clamp(13px,3.4vw,19px)!important;transform:scaleX(1.15)}
+@media(max-width:700px){
+  .action-mantra{
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+  .mantra-flow{
+    gap:10px!important;
+  }
 }
 
 
-/* FINAL RELEASE — Daily Action spacing fix: no arrow/text overlap */
+/* =========================================================
+   RELEASE FINAL — DAILY ACTION + PYRAMID SAFE LAYOUT
+   ========================================================= */
 .action-mantra{
-  overflow:hidden!important;
-  box-sizing:border-box;
-  padding-left:clamp(34px,5vw,72px)!important;
-  padding-right:clamp(34px,5vw,72px)!important;
+  width:min(1120px,calc(100% - 32px))!important;
+  max-width:1120px!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+  padding:34px clamp(24px,3.2vw,46px)!important;
 }
 .mantra-flow{
-  display:grid!important;
-  grid-template-columns:max-content max-content max-content max-content max-content max-content max-content max-content max-content;
-  align-items:center;
-  justify-content:center;
-  column-gap:clamp(12px,1.55vw,26px)!important;
-  width:100%;
-  max-width:100%;
+  --phase-size:32px;
+  --arrow-size:25px;
+  --flow-gap:16px;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:nowrap!important;
+  width:100%!important;
+  max-width:100%!important;
   white-space:nowrap!important;
+  gap:var(--flow-gap)!important;
+  margin:0!important;
+  transform:none!important;
 }
 .mantra-flow .mantra-phase{
-  min-width:0;
+  flex:0 0 auto!important;
+  min-width:0!important;
   white-space:nowrap!important;
-  font-size:clamp(17px,2.15vw,32px)!important;
+  font-size:var(--phase-size)!important;
+  line-height:1.05!important;
+  letter-spacing:-.035em!important;
 }
 .mantra-flow i{
-  display:block!important;
+  position:static!important;
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:center!important;
   width:auto!important;
+  min-width:0!important;
   margin:0!important;
   padding:0!important;
-  position:static!important;
   transform:none!important;
-  white-space:nowrap!important;
   color:#61f2ad!important;
-  font-size:clamp(21px,2vw,29px)!important;
-  font-weight:1000!important;
+  opacity:1!important;
+  font-style:normal!important;
+  font-size:var(--arrow-size)!important;
   line-height:1!important;
-  text-shadow:0 0 9px rgba(97,242,173,.45);
+  font-weight:1000!important;
+  text-shadow:0 0 9px rgba(97,242,173,.48)!important;
 }
 .mantra-final{color:#61f2ad!important}
-@media(max-width:900px){
-  .action-mantra{padding-left:18px!important;padding-right:18px!important}
-  .mantra-flow{column-gap:clamp(6px,1vw,12px)!important}
-  .mantra-flow .mantra-phase{font-size:clamp(12px,2.7vw,20px)!important}
-  .mantra-flow i{font-size:clamp(15px,2.6vw,20px)!important}
+
+/* Pyramid: keep English/Korean labels inside the safe center of each trapezoid */
+.value-pyramid-wrap{overflow:visible!important}
+.value-pyramid{
+  width:min(700px,96%)!important;
+  height:530px!important;
 }
-@media(max-width:560px){
-  .action-mantra{padding-left:8px!important;padding-right:8px!important}
-  .mantra-flow{column-gap:3px!important}
-  .mantra-flow .mantra-phase{font-size:clamp(8.5px,2.75vw,14px)!important;letter-spacing:-.055em!important}
-  .mantra-flow i{font-size:clamp(10px,2.7vw,14px)!important}
+.pyramid-level{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+}
+.pyramid-level strong,.pyramid-level small{
+  display:block!important;
+  max-width:100%!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:break-word!important;
+  text-wrap:balance;
+  line-height:1.18!important;
+}
+.pyramid-l1{height:110px!important;padding:0 11%!important}
+.pyramid-l2{bottom:111px!important;height:99px!important;padding:0 12%!important}
+.pyramid-l3{bottom:211px!important;height:91px!important;padding:0 14%!important}
+.pyramid-l4{bottom:303px!important;height:84px!important;padding:0 16%!important}
+.pyramid-apex{bottom:388px!important;height:112px!important;padding:38px 18% 4px!important}
+.pyramid-l1 strong{font-size:16px!important}
+.pyramid-l2 strong{font-size:16px!important}
+.pyramid-l3 strong{font-size:16px!important}
+.pyramid-l4 strong{font-size:15px!important}
+.pyramid-apex strong{font-size:17px!important}
+.pyramid-level small{font-size:8.5px!important}
+.level-tags{right:-92px!important}
+
+@media(max-width:760px){
+  .action-mantra{width:calc(100% - 12px)!important;padding:26px 10px!important}
+  .mantra-flow{--phase-size:18px;--arrow-size:14px;--flow-gap:7px}
+  .value-pyramid{width:100%!important;height:490px!important}
+  .pyramid-l1{height:102px!important;padding-inline:10%!important}
+  .pyramid-l2{bottom:103px!important;height:91px!important;padding-inline:11%!important}
+  .pyramid-l3{bottom:195px!important;height:84px!important;padding-inline:13%!important}
+  .pyramid-l4{bottom:280px!important;height:77px!important;padding-inline:15%!important}
+  .pyramid-apex{bottom:358px!important;height:102px!important;padding:34px 17% 3px!important}
+  .pyramid-level strong{font-size:13px!important}
+  .pyramid-apex strong{font-size:14px!important}
+  .pyramid-level small{font-size:7.4px!important}
+}
+
+
+/* =========================================================
+   DEFINITIVE DAILY ACTION LAYOUT — NO CLIPPING / NO OVERLAP
+   5 text slots + 4 arrow slots, all contained in the panel
+   ========================================================= */
+.action-mantra{
+  box-sizing:border-box;
+  overflow:visible !important;
+  padding-left:clamp(30px,4vw,64px) !important;
+  padding-right:clamp(30px,4vw,64px) !important;
+}
+
+.mantra-flow{
+  width:100% !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:
+    minmax(0,0.75fr) 28px
+    minmax(0,0.95fr) 28px
+    minmax(0,0.68fr) 28px
+    minmax(0,1.35fr) 28px
+    minmax(0,1.70fr) !important;
+  align-items:center !important;
+  justify-items:center !important;
+  column-gap:clamp(8px,0.8vw,14px) !important;
+  white-space:nowrap !important;
+  transform:none !important;
+}
+
+.mantra-flow .mantra-phase{
+  min-width:0 !important;
+  width:auto !important;
+  max-width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  font-size:clamp(20px,2.15vw,34px) !important;
+  line-height:1 !important;
+  letter-spacing:-0.04em !important;
+}
+
+.mantra-flow i{
+  position:static !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:28px !important;
+  min-width:28px !important;
+  max-width:28px !important;
+  margin:0 !important;
+  padding:0 !important;
+  color:#61f2ad !important;
+  opacity:1 !important;
+  font-style:normal !important;
+  font-size:25px !important;
+  line-height:1 !important;
+  font-weight:1000 !important;
+  transform:none !important;
+  text-shadow:0 0 8px rgba(97,242,173,.45);
+}
+
+.mantra-final{
+  color:#61f2ad !important;
+}
+
+/* Keep every item inside the rounded panel on narrower screens */
+@media (max-width:900px){
+  .action-mantra{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+  .mantra-flow{
+    grid-template-columns:
+      minmax(0,0.75fr) 22px
+      minmax(0,0.95fr) 22px
+      minmax(0,0.68fr) 22px
+      minmax(0,1.35fr) 22px
+      minmax(0,1.70fr) !important;
+    column-gap:6px !important;
+  }
+  .mantra-flow .mantra-phase{
+    font-size:clamp(15px,2.4vw,23px) !important;
+  }
+  .mantra-flow i{
+    width:22px !important;
+    min-width:22px !important;
+    max-width:22px !important;
+    font-size:20px !important;
+  }
+}
+
+@media (max-width:600px){
+  .action-mantra{
+    padding-left:8px !important;
+    padding-right:8px !important;
+  }
+  .mantra-flow{
+    grid-template-columns:
+      minmax(0,0.75fr) 14px
+      minmax(0,0.95fr) 14px
+      minmax(0,0.68fr) 14px
+      minmax(0,1.35fr) 14px
+      minmax(0,1.70fr) !important;
+    column-gap:3px !important;
+  }
+  .mantra-flow .mantra-phase{
+    font-size:clamp(9px,2.55vw,14px) !important;
+    letter-spacing:-0.055em !important;
+  }
+  .mantra-flow i{
+    width:14px !important;
+    min-width:14px !important;
+    max-width:14px !important;
+    font-size:12px !important;
+  }
 }
