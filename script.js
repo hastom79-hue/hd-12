@@ -211,3 +211,44 @@ if(fine&&!reduced){
     io.observe(target);
   }else energize();
 })();
+
+
+/* Module label icons — visual markers only; labels/content remain unchanged */
+(()=>{
+  const iconMap={
+    'Leadership':'★',
+    'EHS':'♻',
+    'Goal-Oriented Team Management':'◎',
+    'Issue Escalation':'↑',
+    'Cross-Functional Work':'↔',
+    'Quality Planning':'✓',
+    'Zero Defects':'◉',
+    'Quality Assurance':'◆',
+    '5S':'⑤',
+    'Standardized Work':'≡',
+    'TPM':'⚙',
+    'Production Leveling':'⇄',
+    'Improvement Approach':'↗',
+    'Problem-Solving Methodology':'◇',
+    'Value-Stream Mapping':'⇢',
+    'Continuous Flow':'↻',
+    'Material Supply':'▣',
+    'Line Balancing':'≋',
+    'Pull System':'⇣'
+  };
+
+  const addIcon=(el)=>{
+    if(!el || el.querySelector(':scope > .module-label-icon')) return;
+    const label=el.textContent.trim();
+    const mark=iconMap[label];
+    if(!mark) return;
+    const icon=document.createElement('span');
+    icon.className='module-label-icon';
+    icon.setAttribute('aria-hidden','true');
+    icon.textContent=mark;
+    el.prepend(icon);
+  };
+
+  $$('.module-card li').forEach(addIcon);
+  $$('.module-brief b').forEach(addIcon);
+})();
