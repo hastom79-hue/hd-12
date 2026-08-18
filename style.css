@@ -334,3 +334,9 @@ footer{min-height:88px;padding:22px clamp(30px,6vw,100px);display:flex;align-ite
     padding:6px 9px;
   }
 }
+
+/* FINAL professional SVG module icons */
+.module-label-icon{display:none!important}
+.module-card li{display:inline-flex;align-items:center;gap:6px}
+.module-svg-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 17px;width:17px;height:17px;color:var(--green)}
+.module-svg-icon svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
