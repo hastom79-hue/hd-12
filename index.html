@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#002261" name="theme-color"/>
+<title>HDPS | Lean Manufacturing Excellence</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css?v=20260818-28-pyramid-hover" rel="stylesheet"/>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="topbar">
+<a aria-label="HD Hyundai logo" href="#top"><img alt="HD Hyundai" class="logo" src="data:image/png;base64,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"/></a>
+<nav class="topnav">
+<a href="#framework">HDPS Framework</a><a href="#modules">19 Modules</a><a href="#principles">Lean Mindset</a><a href="#action">Shop-Floor Action</a><a href="#target">Customer Satisfaction</a>
+</nav>
+</header>
+<nav aria-label="Page bookmarks" class="bookmarks">
+<button class="bookmark active" data-target="top"><span class="label">INTRO</span><span class="tab"></span></button>
+<button class="bookmark" data-target="framework"><span class="label">HDPS</span><span class="tab"></span></button><button class="bookmark" data-target="modules"><span class="label">MODULE</span><span class="tab"></span></button>
+<button class="bookmark" data-target="principles"><span class="label">LEAN</span><span class="tab"></span></button>
+<button class="bookmark" data-target="action"><span class="label">ACTION</span><span class="tab"></span></button>
+<button class="bookmark" data-target="target"><span class="label">TARGET</span><span class="tab"></span></button>
+</nav>
+<main id="top">
+<section class="hero">
+<div class="hero-content">
+<div class="masthead reveal">
+<span class="masthead-tag"><i class="live-dot"></i>HD Construction Equipment · HDPS · Lean Manufacturing Excellence</span>
+<span class="masthead-date">2026 EDITION · NO. 01</span>
+</div>
+<h1 class="reveal d1">Our Production System, HDPS, <span class="headline-mark">Redefines the Standard for Manufacturing</span></h1>
+<p class="lead reveal d2">HDPS integrates built-in quality, just-in-time production, operational stability, and continuous improvement into one production system.<br/><em>Transformation is not the responsibility of one function; it is <strong>the way every employee at HD Construction Equipment works together</strong>.</em></p>
+<div class="actions reveal d3"><a class="btn btn-main" href="#framework">Explore the HDPS Framework ↓</a><a class="btn btn-sub" href="#action">See Shop-Floor Action</a></div>
+</div>
+<div aria-hidden="true" class="hero-visual reveal d2">
+<div class="hero-orbit"></div>
+<div class="hero-core">
+<strong>HDPS</strong><small>PRODUCTION SYSTEM</small>
+<span class="hero-chip hc-1">6 PRINCIPLES</span>
+<span class="hero-chip hc-2">19 MODULES</span>
+</div>
+</div>
+<div class="hero-stats reveal d3"><div><strong>6</strong><span>PRINCIPLES</span></div><div><strong>19</strong><span>MODULES</span></div><div><strong>ONE</strong><span>TEAM HD HYUNDAI</span></div></div>
+<div aria-hidden="true" class="hero-ticker">
+<div class="ticker-track">
+<span>HDPS is a production excellence system built on 6 principles and 19 modules</span>
+<span>ONE TEAM · Everyone Engaged · Every Function Connected · Embedded in Daily Work</span>
+<span>Built-in Quality · Just-in-Time · Operational Stability · Continuous Improvement · Team HD Hyundai · HD Hyundai Core Values</span>
+<span>HDPS is a production excellence system built on 6 principles and 19 modules</span>
+<span>ONE TEAM · Everyone Engaged · Every Function Connected · Embedded in Daily Work</span>
+<span>Built-in Quality · Just-in-Time · Operational Stability · Continuous Improvement · Team HD Hyundai · HD Hyundai Core Values</span>
+</div>
+</div>
+</section>
+<section class="framework" id="framework">
+<div class="section-head reveal"><div class="kicker">01 · HDPS FRAMEWORK</div><h2>HD Construction Equipment Production System</h2><p class="framework-subtitle">Built on 6 principles and 19 modules, HDPS comes to life through coordinated execution across every team.</p></div>
+<div aria-label="Original HDPS six-principle layout" class="framework-shell">
+<div class="hdps-symbol">
+<span class="framework-connector con-top-left"></span>
+<span class="framework-connector con-top-right"></span>
+<span class="framework-connector con-mid-left"></span>
+<span class="framework-connector con-mid-right"></span>
+<span class="framework-connector con-bottom"></span>
+<!--Preserves the original six-principle HDPS symbol layout-->
+<div class="hex team"><div><b>HD Hyundai<br/>Core Values</b><small>HD Hyundai Core Values</small></div></div>
+<div class="hex q"><div><b>Built-in Quality</b><small>Built-in Quality</small></div></div>
+<div class="hex j"><div><b>Just-in-Time</b><small>Just-in-Time</small></div></div>
+<div class="hex ci"><div><b>Continuous Improvement</b><small>Continuous Improvement</small></div></div>
+<div class="hex o"><div><b>Operational Stability</b><small>Operational Stability</small></div></div>
+<div class="hex bottom"><div><b>Team HD Hyundai</b><small>HD Hyundai Team</small></div></div>
+<div aria-label="HDPS (HD construction equipment Production System)" class="hdps-center">
+<div>
+<span class="hdps-center-code">HDPS</span>
+<small class="hdps-center-en">HD Construction Equipment<br/>Production System</small>
+<strong>Customer Satisfaction</strong>
+</div>
+</div>
+</div>
+</div>
+<div aria-label="HDPS 6 principles and 19 modules" class="module-panel reveal">
+<div class="module-panel-head">
+<div>
+<span class="module-kicker">HDPS PRODUCTION INNOVATION</span>
+<h3>6 Principles · 19 Modules</h3>
+</div>
+<span class="module-total">TOTAL <b>19</b></span>
+</div>
+<div class="module-grid">
+<article class="module-card">
+<div class="module-card-top"><span class="module-index">01</span><span class="module-number">2 MODULES</span></div>
+<h4>HD Hyundai Core Values</h4><p>HD Hyundai Core Values</p>
+<ul><li>Leadership</li><li>EHS</li></ul>
+</article>
+<article class="module-card">
+<div class="module-card-top"><span class="module-index">02</span><span class="module-number">3 MODULES</span></div>
+<h4>Team HD Hyundai</h4><p>HD Hyundai Team</p>
+<ul><li>Goal-Oriented Team Management</li><li>Issue Escalation</li><li>Cross-Functional Work</li></ul>
+</article>
+<article class="module-card">
+<div class="module-card-top"><span class="module-index">03</span><span class="module-number">3 MODULES</span></div>
+<h4>Built-in Quality</h4><p>Built-in Quality</p>
+<ul><li>Quality Planning</li><li>Zero Defects</li><li>Quality Assurance</li></ul>
+</article>
+<article class="module-card">
+<div class="module-card-top"><span class="module-index">04</span><span class="module-number">4 MODULES</span></div>
+<h4>Operational Stability</h4><p>Operational Stability</p>
+<ul><li>5S</li><li>Standardized Work</li><li>TPM</li><li>Production Leveling</li></ul>
+</article>
+<article class="module-card">
+<div class="module-card-top"><span class="module-index">05</span><span class="module-number">3 MODULES</span></div>
+<h4>Continuous Improvement</h4><p>Continuous Improvement</p>
+<ul><li>Improvement Approach</li><li>Problem-Solving Methodology</li><li>Value-Stream Mapping</li></ul>
+</article>
+<article class="module-card">
+<div class="module-card-top"><span class="module-index">06</span><span class="module-number">4 MODULES</span></div>
+<h4>Just-in-Time</h4><p>Just-in-Time</p>
+<ul><li>Continuous Flow</li><li>Material Supply</li><li>Line Balancing</li><li>Pull System</li></ul>
+</article>
+</div>
+</div>
+</section>
+<section class="module-detail-section" id="modules">
+<div class="section-head reveal">
+<div class="kicker">02 · HDPS MODULES</div>
+<h2>19 Modules, Made Easy to Understand</h2>
+<p>A clear, concise view of what each module changes on the shop floor and why it matters.</p>
+</div>
+<div class="module-showcase board-deck" id="moduleShowcase">
+<article class="module-feature board-card card-deal" data-module="01">
+<div class="module-feature-headline board-card-head"><span class="module-feature-no board-card-no">01</span><div><h3>HD Hyundai Core Values</h3><p class="module-tagline">Putting people and safety first</p></div></div>
+<div class="module-brief-list board-card-body">
+<div class="module-brief board-slot"><b>Leadership</b><span>Set clear goals and direction, then execute together.</span></div>
+<div class="module-brief board-slot"><b>EHS</b><span>Identify risks early and create a safer workplace.</span></div>
+</div>
+</article>
+<article class="module-feature board-card card-deal" data-module="02">
+<div class="module-feature-headline board-card-head"><span class="module-feature-no board-card-no">02</span><div><h3>Team HD Hyundai</h3><p class="module-tagline">One team, aligned on the same goal and ready to act</p></div></div>
+<div class="module-brief-list board-card-body">
+<div class="module-brief board-slot"><b>Goal-Oriented Team Management</b><span>Align the team around common goals and turn them into action.</span></div>
+<div class="module-brief board-slot"><b>Issue Escalation</b><span>Escalate production issues through the appropriate channels for timely visibility, decision-making, and resolution.</span></div>
+<div class="module-brief board-slot"><b>Cross-Functional Work</b><span>Enable cross-functional collaboration across roles and functions to solve problems and execute work effectively.</span></div>
+</div>
+</article>
+<article class="module-feature board-card card-deal" data-module="03">
+<div class="module-feature-headline board-card-head"><span class="module-feature-no board-card-no">03</span><div><h3>Built-in Quality</h3><p class="module-tagline">Build quality in from the start—never pass defects downstream</p></div></div>
+<div class="module-brief-list board-card-body">
+<div class="module-brief board-slot"><b>Quality Planning</b><span>Identify and prevent quality risks before production begins.</span></div>
+<div class="module-brief board-slot"><b>Zero Defects</b><span>Prevent mistakes so defects are neither created nor passed on.</span></div>
+<div class="module-brief board-slot"><b>Quality Assurance</b><span>Assure quality at every process to protect customer trust.</span></div>
+</div>
+</article>
+<article class="module-feature board-card card-deal" data-module="04">
+<div class="module-feature-headline board-card-head"><span class="module-feature-no board-card-no">04</span><div><h3>Operational Stability</h3><p class="module-tagline">Stable production through an organized workplace and robust standards</p></div></div>
+<div class="module-brief-list board-card-body">
+<div class="module-brief board-slot"><b>5S</b><span>Make what is needed easy to find and remove what is not needed.</span></div>
+<div class="module-brief board-slot"><b>Standardized Work</b><span>Use the same defined method and standard, regardless of who performs the work.</span></div>
+<div class="module-brief board-slot"><b>TPM</b><span>Maintain equipment proactively to reduce failures and downtime.</span></div>
+<div class="module-brief board-slot"><b>Production Leveling</b><span>Level the workload to create a smoother, more consistent production rhythm.</span></div>
+</div>
+</article>
+<article class="module-feature board-card card-deal" data-module="05">
+<div class="module-feature-headline board-card-head"><span class="module-feature-no board-card-no">05</span><div><h3>Continuous Improvement</h3><p class="module-tagline">See problems and turn them into better ways of working</p></div></div>
+<div class="module-brief-list board-card-body">
+<div class="module-brief board-slot"><b>Improvement Approach</b><span>Turn shop-floor ideas into practical improvements.</span></div>
+<div class="module-brief board-slot"><b>Problem-Solving Methodology</b><span>Find root causes and prevent the same problems from recurring.</span></div>
+<div class="module-brief board-slot"><b>Value-Stream Mapping</b><span>Visualize the flow of work and information to identify waste.</span></div>
+</div>
+</article>
+<article class="module-feature board-card card-deal" data-module="06">
+<div class="module-feature-headline board-card-head"><span class="module-feature-no board-card-no">06</span><div><h3>Just-in-Time</h3><p class="module-tagline">What is needed, when it is needed, in the amount needed</p></div></div>
+<div class="module-brief-list board-card-body">
+<div class="module-brief board-slot"><b>Continuous Flow</b><span>Reduce stops and waiting between processes.</span></div>
+<div class="module-brief board-slot"><b>Material Supply</b><span>Supply the right material to the right place at the right time.</span></div>
+<div class="module-brief board-slot"><b>Line Balancing</b><span>Balance workloads across processes to reduce waiting and overburden.</span></div>
+<div class="module-brief board-slot"><b>Pull System</b><span>Produce and replenish only what the downstream process needs.</span></div>
+</div>
+</article>
+</div>
+<div class="module-promise reveal">
+<span>What HDPS Delivers</span><strong>Safer · More Accurate · Faster</strong>
+</div>
+</section>
+<section class="principles" id="principles">
+<div class="section-head principle-head reveal">
+<div class="kicker">03 · LEAN MINDSET</div>
+<h2>Transformation Starts on the Shop Floor.</h2>
+<p>Follow the basics, expose abnormalities, solve problems together, and turn improvement into customer value.</p>
+</div>
+<div class="principle-grid principle-impact-grid">
+<article class="card principle-impact card-deal" data-principle="S">
+<i aria-hidden="true" class="card-fold"></i><span class="principle-watermark">S</span><div class="mindset-mark"><strong>OPERATIONAL STABILITY</strong></div>
+<h3>Strong Basics Build Competitiveness</h3>
+<p class="principle-lead">A stable workplace is the foundation of strong manufacturing.</p>
+<div class="principle-keywords"><span>5S</span><span>Standardized Work</span><span>TPM</span></div>
+<strong class="principle-impact-line">Organized Workplace · Standards Followed · Equipment Kept Running</strong>
+</article>
+<article class="card principle-impact card-deal" data-principle="Q">
+<i aria-hidden="true" class="card-fold"></i><span class="principle-watermark">Q</span><div class="mindset-mark"><strong>BUILT IN QUALITY</strong></div>
+<h3>Build Quality into the Process</h3>
+<p class="principle-lead">Quality should be built in from the start, not inspected in after the fact.</p>
+<div class="principle-keywords"><span>Quality Planning</span><span>Zero Defects</span><span>Quality Assurance</span></div>
+<strong class="principle-impact-line">Do Not Make Defects · Do Not Pass Defects · Do Not Accept Defects</strong>
+</article>
+<article class="card principle-impact card-deal" data-principle="J">
+<i aria-hidden="true" class="card-fold"></i><span class="principle-watermark">JIT</span><div class="mindset-mark"><strong>JUST IN TIME</strong></div>
+<h3>Only What Is Needed, When It Is Needed</h3>
+<p class="principle-lead">Connect process flow to reduce waiting and overproduction.</p>
+<div class="principle-keywords"><span>Continuous Flow</span><span>Material Supply</span><span>Pull System</span></div>
+<strong class="principle-impact-line">What Is Needed · When It Is Needed · In the Amount Needed</strong>
+</article>
+<article class="card principle-impact card-deal" data-principle="CI">
+<i aria-hidden="true" class="card-fold"></i><span class="principle-watermark">CI</span><div class="mindset-mark"><strong>CONTINUOUS IMPROVEMENT</strong></div>
+<h3>Make Tomorrow Better Than Today</h3>
+<p class="principle-lead">Do not ignore small problems—turn them into better ways of working.</p>
+<div class="principle-keywords"><span>Improvement Approach</span><span>Problem-Solving Methodology</span><span>Value-Stream Mapping</span></div>
+<strong class="principle-impact-line">See → Improve → Standardize → Improve Again</strong>
+</article>
+<article class="card principle-impact card-deal" data-principle="T">
+<i aria-hidden="true" class="card-fold"></i><span class="principle-watermark">TEAM</span><div class="mindset-mark"><strong>TEAM HD HYUNDAI</strong></div>
+<h3>Solve Problems as One Team</h3>
+<p class="principle-lead">Work across functions and levels toward the same goal.</p>
+<div class="principle-keywords"><span>Goal-Oriented Team Management</span><span>Cross-Functional Work</span><span>Shop-Floor Small-Group Activities</span></div>
+<strong class="principle-impact-line">Shared Goal · Fast Communication · Joint Execution</strong>
+</article>
+<article class="card principle-impact card-deal" data-principle="C">
+<i aria-hidden="true" class="card-fold"></i><span class="principle-watermark">C</span><div class="mindset-mark"><strong>CUSTOMER VALUE</strong></div>
+<h3>The Customer Is the Standard</h3>
+<p class="principle-lead">Every improvement must translate into value the customer can recognize.</p>
+<div class="principle-keywords"><span>Quality</span><span>Delivery</span><span>Stability</span><span>Improvement</span></div>
+<strong class="principle-impact-line">Every Standard We Raise Must Lead to Customer Satisfaction</strong>
+</article>
+</div>
+</section>
+<section class="action" id="action">
+<div aria-hidden="true" class="action-bg-word">ACTION</div>
+<div class="section-head action-head reveal">
+<div class="kicker">04 · ACTION</div>
+<h2>“Keep Raising the Standard”</h2>
+<p>Execution begins on the shop floor, enabled by goal-oriented team management, multi-skilling, structured improvement and problem solving, small-group activities, and the development of multi-skilled operators.</p>
+</div>
+<div class="action-mantra reveal">
+<span class="mantra-label">HDPS DAILY ACTION</span>
+<div class="mantra-flow">
+<b class="mantra-phase">SEE</b><i>→</i><b class="mantra-phase">FACTS</b><i>→</i><b class="mantra-phase">ACT</b><i>→</i><b class="mantra-phase">STANDARD</b><i>→</i><b class="mantra-phase mantra-final">IMPROVE AGAIN</b>
+</div>
+</div>
+<div aria-label="Four-step HDPS shop-floor action cycle" class="action-rise">
+<div aria-hidden="true" class="action-rise-line"><span></span></div>
+<article class="step action-step reveal" data-step="01">
+<div class="stepnum"><span>01</span></div>
+<div class="step-copy">
+<span class="step-en">SEE THE REALITY</span>
+<h3>Go See, Listen, and Find</h3>
+<p>Go to the workplace and directly observe abnormalities and waste. Transformation starts by refusing to overlook even small problems.</p>
+<div class="step-tags"><span>Gemba</span><span>Abnormality</span><span>Waste</span></div>
+</div>
+</article>
+<article class="step action-step reveal" data-step="02">
+<div class="stepnum"><span>02</span></div>
+<div class="step-copy">
+<span class="step-en">DEFINE THE PROBLEM</span>
+<h3>Structure the Problem</h3>
+<p>Separate symptoms from causes using data and facts rather than relying only on intuition or experience.</p>
+<div class="step-tags"><span>FACTS</span><span>Data</span><span>Cause</span></div>
+</div>
+</article>
+<article class="step action-step reveal" data-step="03">
+<div class="stepnum"><span>03</span></div>
+<div class="step-copy">
+<span class="step-en">IMPROVE TOGETHER</span>
+<h3>Improve Together</h3>
+<p>Shop-floor teams and support functions implement improvements together and verify the results. Proven methods become the new standard.</p>
+<div class="step-tags"><span>Collaboration</span><span>ACT</span><span>Standardize</span></div>
+</div>
+</article>
+<article class="step action-step reveal" data-step="04">
+<div class="stepnum"><span>04</span></div>
+<div class="step-copy">
+<span class="step-en">RAISE THE STANDARD</span>
+<h3>Raise the Standard Again</h3>
+<p>Do not stop after one improvement. From the higher standard, find the next problem and continue the cycle.</p>
+<div class="step-tags"><span>Embed</span><span>Repeat</span><span>Continuous Improvement</span></div>
+</div>
+</article>
+</div>
+</section>
+<section class="target target-impact" id="target">
+<div class="target-impact-head reveal">
+<div class="kicker">05 · TARGET</div>
+<h2>Turn Shop-Floor Execution into <strong>Organizational Strength</strong>,<br/>and Daily Work into <strong>Customer Value</strong>.</h2>
+<p>HDPS is not a separate improvement project. When the shop floor identifies a problem and acts, every function and every employee connects across boundaries to support the solution, embed proven improvements into standards and daily work, and ultimately create value customers can feel.</p>
+</div>
+<div class="target-impact-grid">
+<div class="target-story reveal">
+<span class="target-story-label">HDPS · DAILY WAY OF WORKING</span>
+<h3>Transformation is not something exceptional;<br/><strong>it is the work we repeat every day.</strong></h3>
+<div aria-label="HDPS daily-work cycle" class="daily-loop">
+<span class="daily-loop-core">DAILY<br/>HDPS</span>
+<span class="daily-loop-step dls-1">See at Gemba</span>
+<span class="daily-loop-step dls-2">Solve Together</span>
+<span class="daily-loop-step dls-3">Standardize</span>
+<span class="daily-loop-step dls-4">Daily Practice</span>
+</div>
+<div class="support-message support-hero">
+<span>ALL TEAMS · ALL EMPLOYEES</span>
+<strong>HDPS is <em>not a production-only program</em>; it is built by every function and every employee.</strong>
+<p>It is not a closed activity for production teams alone. Quality, manufacturing engineering, materials, logistics, maintenance, management, and <b>everyone on the shop floor</b> align around the same goal. When a problem arises, the people needed connect immediately across organizational and hierarchical boundaries and work together until it is resolved.</p>
+<div aria-label="HDPS cross-functional collaboration network" class="support-orgs">
+<span>QUALITY</span><span>ENGINEERING</span><span>MATERIAL</span><span>LOGISTICS</span><span>MAINTENANCE</span><span>MANAGEMENT</span><span>ALL EMPLOYEES</span>
+</div>
+</div>
+</div>
+<div class="target-side">
+<div class="mindset-callout reveal">
+<span>MINDSET SHIFT</span>
+<strong>Look beyond “my task” and see <em>“our flow”</em>.</strong>
+<p>The HDPS mindset is that the function where a problem occurs does not solve it alone; the right people connect immediately across boundaries.</p>
+</div>
+<div aria-label="HDPS customer-value pyramid" class="value-pyramid-wrap reveal">
+<div class="pyramid-glow"></div>
+<div class="value-pyramid">
+<div class="pyramid-apex pyramid-level" data-level="5">
+<span class="level-eyebrow">TARGET</span><strong>Customer Satisfaction</strong><small>Customer Satisfaction</small>
+</div>
+<div class="pyramid-level pyramid-l4" data-level="4">
+<span class="level-no">04</span><strong>Create Customer Value</strong><small>Value the customer can experience and recognize</small>
+</div>
+<div class="pyramid-level pyramid-l3" data-level="3">
+<span class="level-no">03</span><strong>Manufacturing Competitiveness</strong><small>Quality · Delivery · Flow · Continuous Improvement</small>
+</div>
+<div class="pyramid-level pyramid-l2 support-level" data-level="2">
+<span class="level-no">02</span><strong>ONE TEAM Collaboration</strong><small>Every Function Connected · Full Support · Joint Problem Solving</small>
+</div>
+<div aria-hidden="true" class="level-tags level-tags-2"><span>Every Function Engaged</span><span>Full Support</span></div>
+<div class="pyramid-level pyramid-l1" data-level="1">
+<span class="level-no">01</span><strong>Joint Execution: Shop Floor + Support Functions</strong><small>Shop-Floor Action · Support Connection · Safety · Standards · Teamwork</small>
+</div>
+</div>
+<div class="pyramid-caption"><span>FIELD</span><i></i><strong>DAILY PRACTICE</strong><i></i><span>CUSTOMER</span></div>
+<div class="pyramid-manifesto"><span>NOT A PROJECT</span><strong>“HDPS is the way we work every day.”</strong></div>
+</div>
+</div>
+</div>
+<div class="target-manifesto reveal">
+<p class="manifesto-outcome">The Essential Formula for Raising and Leveling Manufacturing Excellence</p>
+<strong>Everyone Engaged <i>×</i> Every Function Connected <i>×</i> Embedded in Daily Work</strong>
+<a class="btn target-home-btn" href="#top">Back to Top ↑</a>
+</div>
+</section>
+</main>
+<footer><div><strong>HD Hyundai · HD Construction Equipment · Lean Manufacturing Excellence</strong><p>HDPS · A Structured System for Manufacturing Excellence</p></div><div class="tag">ONE TEAM · ONE GOAL · CUSTOMER SATISFACTION</div></footer>
+<button aria-label="Back to top" class="backtop" id="backtop">↑</button>
+<script defer="" src="script.js?v=20260818-28-pyramid-hover"></script>
+</body>
+</html>
