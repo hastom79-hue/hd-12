@@ -627,3 +627,101 @@ footer{min-height:88px;padding:22px clamp(30px,6vw,100px);display:flex;align-ite
     font-size:12px !important;
   }
 }
+
+
+/* =========================================================
+   FINAL PYRAMID SAFE-TEXT LAYOUT
+   Prevent text from breaking inside triangular/trapezoid edges
+   ========================================================= */
+.value-pyramid{
+  width:min(700px,96%)!important;
+  height:520px!important;
+}
+
+.pyramid-level{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  text-align:center!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+.pyramid-level .level-no,
+.pyramid-level .level-eyebrow,
+.pyramid-level strong,
+.pyramid-level small{
+  position:relative;
+  z-index:2;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  hyphens:none!important;
+}
+
+/* bottom 4 trapezoids: explicit safe widths matching their sloped sides */
+.pyramid-l1 .level-no,.pyramid-l1 strong,.pyramid-l1 small{max-width:78%!important}
+.pyramid-l2 .level-no,.pyramid-l2 strong,.pyramid-l2 small{max-width:74%!important}
+.pyramid-l3 .level-no,.pyramid-l3 strong,.pyramid-l3 small{max-width:70%!important}
+.pyramid-l4 .level-no,.pyramid-l4 strong,.pyramid-l4 small{max-width:64%!important}
+
+.pyramid-l1{height:108px!important}
+.pyramid-l2{bottom:109px!important;height:97px!important}
+.pyramid-l3{bottom:207px!important;height:89px!important}
+.pyramid-l4{bottom:297px!important;height:83px!important}
+
+/* apex: never wrap the title inside the narrow triangle */
+.pyramid-apex{
+  bottom:381px!important;
+  width:34%!important;
+  height:112px!important;
+  padding:34px 0 5px!important;
+  overflow:visible!important;
+}
+.pyramid-apex .level-eyebrow{
+  max-width:56%!important;
+  font-size:7px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.pyramid-apex strong{
+  width:82%!important;
+  max-width:82%!important;
+  margin-top:3px!important;
+  font-size:12px!important;
+  line-height:1.08!important;
+  white-space:nowrap!important;
+  letter-spacing:-.035em!important;
+}
+.pyramid-apex small{
+  display:none!important;
+}
+
+/* readable sizing for remaining levels */
+.pyramid-l4 strong{font-size:15px!important;line-height:1.14!important}
+.pyramid-l3 strong{font-size:15px!important;line-height:1.14!important}
+.pyramid-l2 strong{font-size:15px!important;line-height:1.14!important}
+.pyramid-l1 strong{font-size:14px!important;line-height:1.14!important}
+.pyramid-level small{
+  margin-top:4px!important;
+  font-size:8px!important;
+  line-height:1.18!important;
+}
+
+@media(max-width:760px){
+  .value-pyramid{height:470px!important}
+  .pyramid-l1{height:98px!important}
+  .pyramid-l2{bottom:99px!important;height:88px!important}
+  .pyramid-l3{bottom:188px!important;height:81px!important}
+  .pyramid-l4{bottom:270px!important;height:75px!important}
+  .pyramid-apex{
+    bottom:346px!important;
+    width:36%!important;
+    height:98px!important;
+    padding-top:30px!important;
+  }
+  .pyramid-apex strong{font-size:10px!important}
+  .pyramid-l4 strong,.pyramid-l3 strong,.pyramid-l2 strong{font-size:12px!important}
+  .pyramid-l1 strong{font-size:11px!important}
+  .pyramid-level small{font-size:6.8px!important}
+}
